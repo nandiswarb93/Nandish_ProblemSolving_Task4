@@ -1,0 +1,104 @@
+a = +prompt("enter a number +ve or -ve to reverse with sign : ")
+b = String(a).split("")
+if(b[0] == "-")
+{
+    temp = Number(a) * (-1)
+    sum = 0
+    while(temp > 0)
+    {
+        rem = temp%10;
+        sum = (sum * 10) + rem
+        temp = Math.floor(temp/10)
+    }
+    console.log("-" +sum)
+}
+else
+{
+    sum = 0
+    while(a> 0)
+    {
+        rem = a%10;
+        sum = (sum * 10) + rem
+        a = Math.floor(a/10)
+    }
+    console.log(sum)
+}
+
+a = prompt("enter a number to find min and max : with out duplicates : ").split("")
+min = a[0]
+max = a[0]
+for(i of a)
+{
+    if( i > max)
+    {
+        max = i
+    }
+    if( i < min){
+        min = i
+    }
+temp = String(min+max)  
+}
+for(i of a)
+{
+    
+    if(max!=i && min!=i)
+    {
+      temp = temp + i
+    }
+}
+console.log(temp)
+a = prompt("enter a number  find min and max and also with duplicates : ").split("")
+for(i = 0;i<a.length;i++)
+{
+    for(j =i+1;j<a.length;j++)
+    {
+        if(a[i] > a[j])
+        {
+            temp = a[j]
+            a[j] = a[i]
+            a[i] = temp 
+        }
+    }
+}
+
+min = a[0]
+max = a[a.length-1]
+b = a.slice(1,a.length-1)
+var temp = ""
+for(i of b)
+{
+    temp = temp+i
+}
+console.log(min + ""+ max+ "" + temp);
+
+
+number = +prompt("enter a number to check palindrome or not : ")
+duplicate_number  = number
+palindrome = 0
+while(number>0)
+{
+last_value = number % 10;
+palindrome = (palindrome*10)+ last_value;
+number = Math.floor(number/10)
+}
+if (palindrome == duplicate_number)
+{
+    console.log( duplicate_number + " : is palindrome number")
+}
+else
+{
+    console.log( duplicate_number + " : is not a  palindrome number")
+}
+
+
+o/p:
+
+enter a number +ve or -ve to reverse with sign : -1232
+-2321
+enter a number to find min and max : with out duplicates : 19855654
+19855654
+enter a number  find min and max and also with duplicates : 452128975621445
+191222444555678
+enter a number to check palindrome or not : 123
+123 : is not a  palindrome number
+
